@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer"
+        },
+        "page_size": {
+          "type": "integer"
+        },
+        "total_elements": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        },
+        "errors": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "page",
+        "page_size",
+        "total_elements",
+        "total",
+        "errors"
+      ]
+    },
+    "results": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "userName": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "company": {
+              "type": "string"
+            },
+            "jobTitle": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "userName",
+            "location",
+            "company",
+            "jobTitle",
+            "createdAt",
+            "status"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "metadata",
+    "results"
+  ]
+}
