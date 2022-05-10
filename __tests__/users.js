@@ -1,5 +1,5 @@
 const frisby = require('frisby');
-const frisbyUtils = require('../functions/frisby-methods.js');
+const frisbyMethods = require('../functions/frisby-methods.js');
 const fs = require('fs');
 const path = require('path');
 var Validator = require('jsonschema').Validator;
@@ -15,7 +15,7 @@ describe("User endpoint", () => {
   it('response should have status as ACTIVE and a valid JSON schema', async () => {
     const schemaPath = path.resolve('./JSON/users.json');
       try {
-        const res = await frisbyUtils.get(baseUrl, endpoint, frisby);
+        const res = await frisbyMethods.get(baseUrl, endpoint, frisby);
         const schema = await JSON.parse(fs.readFileSync(schemaPath));
         const validate = v.validate(await JSON.parse(res.body), schema);
         const body = JSON.parse(res.body);
